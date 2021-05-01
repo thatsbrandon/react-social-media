@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24.419" height="49.545" viewBox="0 0 24.419 49.545">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#d3d9e2"/>
+    </linearGradient>
+    <filter id="Intersection_1" x="5.89" y="14.568" width="12.1" height="10.371" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood flood-color="#b5c6e0" flood-opacity="0.231"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Intersection_2" x="5.89" y="24.139" width="12.1" height="10.371" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur result="blur-2"/>
+      <feFlood flood-color="#b5c6e0" flood-opacity="0.231"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Subtraction_1" x="0" y="29.372" width="24.419" height="20.172" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur result="blur-3"/>
+      <feFlood flood-color="#b5c6e0" flood-opacity="0.231"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Subtraction_2" x="0" y="0" width="24.419" height="20.172" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur result="blur-4"/>
+      <feFlood flood-color="#b5c6e0" flood-opacity="0.231"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Diamond_Logo" data-name="Diamond Logo" transform="translate(-23.67 -0.658)">
+    <g transform="matrix(1, 0, 0, 1, 23.67, 0.66)" filter="url(#Intersection_1)">
+      <path id="Intersection_1-2" data-name="Intersection 1" d="M0,9.177,5.354,0l5.354,9.177Z" transform="translate(6.59 15.36)" stroke="rgba(255,255,255,0.4)" stroke-width="0.8" fill="url(#linear-gradient)"/>
+    </g>
+    <path id="Intersection_3" data-name="Intersection 3" d="M0,9.177,5.354,0l5.354,9.177Z" transform="translate(30.257 16.019)" fill="#fff"/>
+    <g transform="matrix(1, 0, 0, 1, 23.67, 0.66)" filter="url(#Intersection_2)">
+      <path id="Intersection_2-2" data-name="Intersection 2" d="M0,9.177,5.354,0l5.354,9.177Z" transform="translate(17.29 33.72) rotate(180)" stroke="rgba(255,255,255,0.4)" stroke-width="0.8" fill="url(#linear-gradient)"/>
+    </g>
+    <path id="Intersection_4" data-name="Intersection 4" d="M0,9.177,5.354,0l5.354,9.177Z" transform="translate(40.964 34.374) rotate(180)" fill="#fff"/>
+    <g transform="matrix(1, 0, 0, 1, 23.67, 0.66)" filter="url(#Subtraction_1)">
+      <path id="Subtraction_1-2" data-name="Subtraction 1" d="M5.75,19H0L11.5,0,23,19l-5.749,0L11.5,9.5,5.75,19Z" transform="translate(23.71 48.77) rotate(180)" stroke="rgba(255,255,255,0.4)" stroke-width="0.8" fill="url(#linear-gradient)"/>
+    </g>
+    <path id="Subtraction_4" data-name="Subtraction 4" d="M5.75,19H0L11.5,0,23,19l-5.749,0L11.5,9.5,5.75,19Z" transform="translate(47.38 49.43) rotate(180)" fill="#fff"/>
+    <g transform="matrix(1, 0, 0, 1, 23.67, 0.66)" filter="url(#Subtraction_2)">
+      <path id="Subtraction_2-2" data-name="Subtraction 2" d="M5.75,19H0L11.5,0,23,19l-5.749,0L11.5,9.5,5.75,19Z" transform="translate(0.71 0.77)" stroke="rgba(255,255,255,0.4)" stroke-width="0.8" fill="url(#linear-gradient)"/>
+    </g>
+    <path id="Subtraction_3" data-name="Subtraction 3" d="M5.75,19H0L11.5,0,23,19l-5.749,0L11.5,9.5,5.75,19Z" transform="translate(24.38 1.43)" fill="#fff"/>
+  </g>
+</svg>
