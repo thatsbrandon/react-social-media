@@ -1,9 +1,12 @@
-import React, { Component, ReactElement, useState } from 'react';
+import React, { Component, ReactElement } from 'react';
 import styled from 'styled-components';
 import AuthForm, { AuthFormType } from './forms/AuthForm';
+import MediaQuery from 'react-responsive';
 
 import Logo from '../assets/logo.svg';
 import BaseLink from '../misc/BaseLink';
+
+import '../styles/scss/Auth.scss';
 
 interface IAuthPageContainerProps {
   title: string;
@@ -37,6 +40,7 @@ const renderAuthButton = (props: IAuthPageContainerProps): ReactElement => {
 export default function AuthPageContainer(props: IAuthPageContainerProps) {
   return (
     <PageContainer>
+      <MediaQuery minWidth={800}>
         <SideHeader>
           <img src={Logo} alt="logo" height="48" width="23"/>
           <div>
@@ -45,10 +49,11 @@ export default function AuthPageContainer(props: IAuthPageContainerProps) {
           </div>
           {renderAuthButton(props)}
         </SideHeader>
-        <FormWrapper>
-          <AuthForm type={props.formType}></AuthForm>
-        </FormWrapper>
-      </PageContainer>
+      </MediaQuery>
+      <FormWrapper>
+        <AuthForm type={props.formType}></AuthForm>
+      </FormWrapper>
+    </PageContainer>
   )
 }
 
@@ -124,4 +129,9 @@ const FormWrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0 5.5rem;
+
+  @media only screen and (max-width: 800px) {
+    padding: 0;
+    display: block;
+  }
 `;

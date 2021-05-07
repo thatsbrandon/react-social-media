@@ -23,11 +23,7 @@ const BaseAuthInputJSX = (authInputProps: any) => {
 
 const MasterForm = styled.form`
   width: 100%;
-`;
-
-const FormTitleLabel = styled.h1`
-  padding-bottom: 1.5rem;
-  letter-spacing: .5rem;
+  padding-bottom: 1rem;
 `;
 
 const AuthInputWrapper = styled.div`
@@ -89,11 +85,14 @@ const SubmitAuthFormButton = styled.button`
   &:hover {
     transform: scale(1.02);
   }
+
+  &:disabled {
+    opacity: 0.5;
+  }
 `;
 
 export {
   BaseAuthInputJSX,
   MasterForm,
-  FormTitleLabel,
   SubmitAuthFormButton
 };

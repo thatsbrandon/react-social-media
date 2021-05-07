@@ -1,16 +1,18 @@
 import React, { ReactElement } from 'react';
 import { Form, Field } from 'react-final-form';
 
+import SPAuthService from '../../../auth/index';
+
 import { 
   BaseAuthInputJSX,
   MasterForm, 
-  FormTitleLabel,
   SubmitAuthFormButton
 } from './styles';
 
+const AuthService = new SPAuthService();
+
 const onAuthFormSubmit = (formData: any) => {
   console.log('Login form to be submitted...')
-  console.log(formData);
 };
 
 const LoginForm = () => (
@@ -18,7 +20,7 @@ const LoginForm = () => (
     onSubmit={onAuthFormSubmit}
     render={({ handleSubmit }) => (
       <MasterForm onSubmit={handleSubmit}>
-        <FormTitleLabel>Login</FormTitleLabel>
+        <h1 className='form-title-label'>Login</h1>
         <Field
           name="email"
           render={({ input, meta }) => (
