@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import React from 'react';
 
 const BaseAuthInputJSX = (authInputProps: any) => {
-  console.log(authInputProps);
   return (
     <AuthInputWrapper>
       <AuthTitleLabel>{authInputProps.title}</AuthTitleLabel>

@@ -28,17 +28,20 @@ const AuthService = new SPAuthService();
 
 const onAuthFormSubmit = (formData: any) => {
   console.log('Form submit...')
-  AuthService.register(formData.username, formData.email, formData.password);
+  AuthService.register(
+    formData.username,
+    formData.email,
+    formData.password,
+    (user) => {
+      console.log("new user", user);
+    },
+    () => {
+      console.log("error");
+    }
+  );
 }
 
 const RegistartionForm = (): ReactElement => {
-  // Errors will have null vaules for each key on first init.
-  const errors: IRegistrationFormErrors = {
-    username: null,
-    email: null,
-    password: null
-  };
-
   return (
     <Form 
       onSubmit={onAuthFormSubmit}
@@ -48,6 +51,16 @@ const RegistartionForm = (): ReactElement => {
         password: ''
       }}
       validate={(values: IRegistrationFormValues) => {
+
+        // Errors will have null vaules for each key on first init.
+        const errors: IRegistrationFormErrors = {
+          username: "",
+          email: "",
+          password: ""
+        };
+
+        console.log("Validation values object", values);
+
         const username = values.username;
         const email = values.email;
         const password = values.password;
@@ -56,23 +69,24 @@ const RegistartionForm = (): ReactElement => {
         const emailRegex = new RegExp(SPRegex.email);
         const passordRegex = new RegExp(SPRegex.password);
 
-        if (username.length < 5) {
+        if (username && username.length < 5) {
           errors.username = 'Please enter a username larger than 4 characters.';
         } else if (!usernameRegex.test(username)) {
           errors.username = 'Your username you entered was invalid.';
         }
 
-        if (emailRegex.test(email)) {
+        if (email && emailRegex.test(email)) {
           errors.email = "Your email that you entered in invalid."
         }
 
-        if (password.length < 8) {
+        if (password && password.length < 8) {
           errors.password = "Your password is to short, please enter a password that is 8 characters long."
         } else if (!passordRegex.test(password)) {
           errors.password = "Your password you have entered in invalid. Please try another one."
         }
 
         return errors;
+
       }}
       render={({handleSubmit, submitting, pristine}) => (
         <MasterForm onSubmit={handleSubmit}>

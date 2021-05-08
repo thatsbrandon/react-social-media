@@ -5,16 +5,32 @@ import firebase from '../firebase';
  */
 export default class SPAuthService {
 
-  register(username: string, email: string, password: string) {
+  login(email: string, password: string) {
+
+  }
+
+  callbackTest(onSuccess: () => void) {
+    onSuccess();
+  } 
+
+  register(
+    username: string,
+    email: string, 
+    password: string,
+    onSuccess: (user: Object) => void,
+    onError: () => void) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then((user) => {
-        console.log(user);
+        onSuccess(user);
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
 
         console.error("Error creating a new user", errorCode, errorMessage);
+        
+        // Fire off function from wherever it's called to do error cleanup.
+        onError();
       })
   }
 
