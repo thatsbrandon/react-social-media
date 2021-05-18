@@ -9,10 +9,6 @@ export default class SPAuthService {
 
   }
 
-  callbackTest(onSuccess: () => void) {
-    onSuccess();
-  } 
-
   register(
     username: string,
     email: string, 
@@ -24,12 +20,6 @@ export default class SPAuthService {
         onSuccess(user);
       })
       .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-
-        console.error("Error creating a new user", errorCode, errorMessage);
-        
-        // Fire off function from wherever it's called to do error cleanup.
         onError();
       })
   }
