@@ -6,7 +6,7 @@ import firebase from '../firebase';
 export default class SPAuthService {
 
   login(email: string, password: string) {
-
+    
   }
 
   register(
