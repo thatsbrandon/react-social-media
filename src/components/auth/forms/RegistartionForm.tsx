@@ -27,18 +27,19 @@ interface IRegistrationFormErrors {
 const AuthService = new SPAuthService();
 
 const onAuthFormSubmit = (formData: any) => {
-  console.log('Form submit...')
-  AuthService.register(
-    formData.username,
-    formData.email,
-    formData.password,
-    (user) => {
-      console.log("new user", user);
-    },
-    () => {
-      console.log("error");
-    }
-  );
+  // console.log('Form submit...')
+  console.log(formData);
+  // AuthService.register(
+  //   formData.username,
+  //   formData.email,
+  //   formData.password,
+  //   (user) => {
+  //     console.log("new user", user);
+  //   },
+  //   () => {
+  //     console.log("error");
+  //   }
+  // );
 }
 
 const RegistartionForm = (): ReactElement => {
@@ -54,12 +55,10 @@ const RegistartionForm = (): ReactElement => {
 
         // Errors will have null vaules for each key on first init.
         const errors: IRegistrationFormErrors = {
-          username: "",
-          email: "",
-          password: ""
+          username: null,
+          email: null,
+          password: null
         };
-
-        console.log("Validation values object", values);
 
         const username = values.username;
         const email = values.email;
@@ -123,7 +122,6 @@ const RegistartionForm = (): ReactElement => {
           />
           <SubmitAuthFormButton 
             type="submit"
-            disabled={submitting || pristine}
           >
             Submit
           </SubmitAuthFormButton>
